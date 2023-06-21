@@ -9,13 +9,14 @@
   </head>
 
   <body>
+    <script src="cyberminer.js"></script>
      <!-- Header section -->
     <div class="header"> 
         <nav>
             <img src="imgs/astronaut-miner.png" class="logo">
             <h1 class="nav-title">CYBERMINER</h1>
             <ul class="nav-links">
-                <li><a href="">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="">Team</a></li>
                 <li><a href="https://docs.google.com/presentation/d/1QdlE5bm9xvvfCp4_BFCPxqyvfmHfbyAMUVsGwtAbqo0/edit?usp=sharing">Presentation</a></li>
                 
@@ -29,7 +30,10 @@
       <h1>Find What You're looking for</h1>
       <form>       
           <input id="searchbar-txt" type="text" placeholder="&#128269   Enter your search here!">
-          <button class="search-btn" type="button">Search</button>     
+          <button id="search-btn" type="button">Search</button>
+          <script type="text/javascript">
+          document.getElementById("search-btn").onclick = function () {location.href = "results.html"};
+          </script>     
       </form>
       <span>ex. UTD, Coursebook, Software Engineering</span>
       <!-- This section has links to our documentation and other deliverables -->
