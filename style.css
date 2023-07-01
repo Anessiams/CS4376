@@ -76,9 +76,14 @@ a:hover{
     background: #391146;
     color: #fff;
     padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
+    border:rgba(218, 200, 236, 0.11);
+    border-radius: 5px;
+    
     cursor: pointer;
+}
+
+button:hover{
+    background: rgba(226, 214, 238, 0.11);
 }
 .search-section span{
     display: inline-flex;

@@ -17,7 +17,7 @@
             <h1 class="nav-title">CYBERMINER</h1>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="">Team</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1U-sMZhYiI6nO5olo5yQQR5NMwicKkOBo?usp=sharing">Team Deliverables</a></li>
                 <li><a href="https://docs.google.com/presentation/d/1QdlE5bm9xvvfCp4_BFCPxqyvfmHfbyAMUVsGwtAbqo0/edit?usp=sharing">Presentation</a></li>
                 
             </ul>
@@ -31,6 +31,7 @@
       <form>       
           <input id="searchbar-txt" type="text" placeholder="&#128269   Enter your search here!">
           <button id="search-btn" type="button">Search</button>
+          <button id="url-search-btn" type="button" onclick="urlnav()">URL</button>
           <script type="text/javascript">
           document.getElementById("search-btn").onclick = function () {location.href = "results.html"};
           </script>     
@@ -43,7 +44,15 @@
           <div class="category"></div>
           <div class="category"></div>
   </div>
-
+    <!--------Javascript----------->
+    <script>
+      function urlnav(){
+        var x = document.getElementById("searchbar-txt").value;
+        var url = "https://" + x;
+        var win = window.open(url,'_blank');
+        win.focus;
+      }
+    </script>
   </body>
 
 </link>
