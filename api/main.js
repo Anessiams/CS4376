@@ -2,9 +2,11 @@ import express from "express";
 import NodeCache from "node-cache";
 import scrapeWebsite from "./scrape.js";
 import loadInitialSites from "./load-initial-sites.js";
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 //The site cache is used to cache the data scraped from websites
 const siteTextCache = new NodeCache();
