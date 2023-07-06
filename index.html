@@ -30,25 +30,86 @@
       <h1>Find What You're looking for</h1>
       <form>       
           <input id="searchbar-txt" type="text" placeholder="&#128269   Enter your search here!">
-          <button id="search-btn" type="button">Search</button>
-          <button id="url-search-btn" type="button" onclick="urlnav()">URL</button>
-          <script type="text/javascript">
+          <button id="search-btn" type="button" onclick="searchnav()">Search</button>
+          <button id="url-search-btn" type="button" onclick="urlnav()">URL me</button>
+          <!-- <script type="text/javascript">
           document.getElementById("search-btn").onclick = function () {location.href = "results.html"};
-          </script>     
+          </script>      -->
       </form>
       <span>ex. UTD, Coursebook, Software Engineering</span>
+      <h1 id="searchResults" style="display: none;">Search Results</h1>
+      
+      <p id="results-length" ></p>
+      <ul id="results-list"></ul>
 
   </div>
     <!--------Javascript----------->
     <script>
-      function urlnav(){
-        var x = document.getElementById("searchbar-txt").value;
-        var url = "https://" + x;
-        var win = window.open(url,'_blank');
-        win.focus;
+      function searchnav(){
+        const queryString = document.getElementById('searchbar-txt').value;
+        const data = { queryString };
+      
+        fetch('http://3.128.34.15:3000/search', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+          .then(response => response.json())
+          .then(result => {
+            // Handle the response here
+            console.log(result);
+            // You can display the result on the page or perform further actions
+            document.getElementById("searchResults").style.display = "block";
+            // Display the length of search results
+            const resultsLength = result.length;
+            document.getElementById('results-length').textContent = `Number of Results: ${resultsLength}`;
+    
+            // Display the URLs of search results
+            const resultsList = document.getElementById('results-list');
+            resultsList.innerHTML = ''; // Clear previous results
+    
+            result.forEach(resultItem => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = resultItem.site.url;
+            link.textContent = resultItem.site.url;
+            listItem.appendChild(link);
+            resultsList.appendChild(listItem);
+            });
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            // Handle any errors that occur during the request
+          });
       }
+      
+      function urlnav(){
+        const url = document.getElementById('searchbar-txt').value;
+        const data = { url };
+
+        fetch('http://3.128.34.15:3000/add-site', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+          .then(response => response.json())
+          .then(result => {
+            // Handle the response here
+            console.log(result);
+            // You can display the result on the page or perform further actions
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            // Handle any errors that occur during the request
+          });
+      }
+
+
     </script>
   </body>
 
-</link>
 </html>
