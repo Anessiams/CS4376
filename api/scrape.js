@@ -1,9 +1,11 @@
 import puppeteer from "puppeteer";
+
 export default async function scrapeWebsite(
   url,
   verbose = false
 ) {
-  const browser = await puppeteer.launch();
+  console.log("Scraping: " + url);
+  const browser = await puppeteer.launch({ headless: "old" });
   const page = await browser.newPage();
   await page.goto(url);
   const data = await page.evaluate(() => {

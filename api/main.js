@@ -19,6 +19,10 @@ app.get("/", (req, res) => {
   res.send("Hello CyberMiner!");
 });
 
+app.get("/all", (req, res) => {
+  const siteTextList = siteTextCache.mget(siteTextCache.keys());
+  return res.json(siteTextList);
+});
 app.post("/add-site", async (req, res) => {
   const { url, payment = false } = req.body;
 
@@ -46,7 +50,6 @@ app.post("/add-site", async (req, res) => {
 
   return res.send("Site added!");
 });
-
 app.post("/search", (req, res) => {
   const { queryString } = req.body;
   console.log("Received search query for: " + queryString);
@@ -68,6 +71,13 @@ app.post("/search", (req, res) => {
   let siteTextList = siteTextCache.mget(siteTextCache.keys());
   siteTextList = Object.values(siteTextList);
 
+  console.log(
+    "Searching " +
+      siteTextList.length +
+      " sites for " +
+      queryString
+  );
+
   const searchResults = [];
   const queryStringKeywords = queryString.split(" ");
   console.log(queryStringKeywords);
@@ -83,6 +93,7 @@ app.post("/search", (req, res) => {
       }
     }
     //Add site to search results if there are any matches
+    console.log("Keyword matches: " + keywordMatches);
     if (keywordMatches > 0) {
       searchResults.push({
         site: {
@@ -94,7 +105,6 @@ app.post("/search", (req, res) => {
         keywordMatches: keywordMatches,
       });
     }
-    return res.json(searchResults);
   }
   //Sort search results by number of keyword matches
   searchResults.sort((a, b) => {
