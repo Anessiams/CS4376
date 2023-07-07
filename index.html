@@ -101,6 +101,7 @@
             // Handle the response here
             console.log(result);
             // You can display the result on the page or perform further actions
+            document.getElementById("searchResults").style.display = "none";
           })
           .catch(error => {
             console.error('Error:', error);
