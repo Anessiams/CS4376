@@ -1,42 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang ="en">
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-----Browser Tab Settings----->
     <title>Cyberminer Websearch</title>
+    <link rel="icon" type="image/png" href="imgs/helmet.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <script src="cyberminer.js"></script>
-     <!-- Header section -->
-    <div class="header"> 
-        <nav>
-            <img src="imgs/astronaut-miner.png" class="logo">
-            <h1 class="nav-title">CYBERMINER</h1>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="https://drive.google.com/drive/folders/1U-sMZhYiI6nO5olo5yQQR5NMwicKkOBo?usp=sharing">Team Deliverables</a></li>
-                <li><a href="https://docs.google.com/presentation/d/1QdlE5bm9xvvfCp4_BFCPxqyvfmHfbyAMUVsGwtAbqo0/edit?usp=sharing">Presentation</a></li>
-                
-            </ul>
-        </nav>
-     </div>
-
-    <div class="main-content">
-      <!-- This section contains the actual input and searchbar -->
-    <div class="search-section">
-      <h1>Find What You're looking for</h1>
-      <form>       
-          <input id="searchbar-txt" type="text" placeholder="&#128269   Enter your search here!">
-          <button id="search-btn" type="button" onclick="searchnav()">Search</button>
-          <button id="url-search-btn" type="button" onclick="urlnav()">Add URL</button>
-          <!-- <script type="text/javascript">
-          document.getElementById("search-btn").onclick = function () {location.href = "results.html"};
-          </script>      -->
-      </form>
-      <span>ex. UTD, Coursebook, Software Engineering</span>
+    <!--------Navbar Section----------->
+    <header>
+      <nav class="navbar">
+        <img src="imgs/astronaut-miner.png" class="logo" width="50px">
+        <a href="#" class="nav-title">CS 4376 Web Search Project</a>
+        <ul class ="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="https://rb.gy/ddrdy" target="_blank" class="nav-link">Project Plan</a></li>
+          <li class="nav-item"><a href="https://rb.gy/8cdr0" target="_blank" class="nav-link">Phase 1</a></li>
+          <li class="nav-item"><a href="https://rb.gy/mlns1" target="_blank" class="nav-link">Phase 2</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <script src="navscript.js"></script>
+    <!--------Search Section----------->
+    <main>
+      <div class="search-section">
+        <a class="search-title">Cyberminer Search</a>
+        <form>
+          <input id="searchbar-txt" type="text" name="search" placeholder="Type your search here!">
+          <input id="search-btn" type="button" onclick="searchnav()"value="&#128269"/>
+          <input id="url-search-btn" type="button" onclick="urlnav()" value="&#127760"/>
+        </form>
+      </div>
       <h1 id="searchResults" style="display: none;">Search Results</h1>
       
       <p id="results-length" ></p>
@@ -111,6 +122,7 @@
 
 
     </script>
+    </main>
   </body>
 
 </html>
