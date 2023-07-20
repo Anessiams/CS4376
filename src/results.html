@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang ="en">
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-----Browser Tab Settings----->
     <title>Cyberminer Websearch</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="/imgs/helmet.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,22 +18,25 @@
   </head>
 
   <body>
-    <!-- Header section -->
-    <div class="header">
-      <nav>
-        <img src="imgs/astronaut-miner.png" class="logo" />
-        <h1 class="nav-title">CYBERMINER</h1>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="">Team</a></li>
-          <li>
-            <a
-              href="https://docs.google.com/presentation/d/1QdlE5bm9xvvfCp4_BFCPxqyvfmHfbyAMUVsGwtAbqo0/edit?usp=sharing"
-              >Presentation</a
-            >
-          </li>
+    <script src="cyberminer.js"></script>
+    <!--------Navbar Section----------->
+    <header>
+      <nav class="navbar">
+        <img src="/imgs/astronaut-miner.png" class="logo" width="50px">
+        <a href="#" class="nav-title">CS 4376 Web Search Project</a>
+        <ul class ="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="https://rb.gy/ddrdy" target="_blank" class="nav-link">Project Plan</a></li>
+          <li class="nav-item"><a href="https://rb.gy/8cdr0" target="_blank" class="nav-link">Phase 1</a></li>
+          <li class="nav-item"><a href="https://rb.gy/mlns1" target="_blank" class="nav-link">Phase 2</a></li>
         </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </nav>
-    </div>
+    </header>
+    <script src="navscript.js"></script>
   </body>
 </html>
