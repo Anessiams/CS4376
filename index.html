@@ -48,6 +48,8 @@
           <input id="url-search-btn" type="button" onclick="urlnav()" value="&#127760"/>
         </form>
       </div>
+
+      <h1 id="siteAdded" style="display: none;">Site has been added!! :D</h1>
       <h1 id="searchResults" style="display: none;">Search Results</h1>
       
       <p id="results-length" ></p>
@@ -112,6 +114,7 @@
             console.log(result);
             // You can display the result on the page or perform further actions
             document.getElementById("searchResults").style.display = "none";
+            document.getElementById("siteAdded").style.display = "block";
           })
           .catch(error => {
             console.error('Error:', error);
