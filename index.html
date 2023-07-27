@@ -121,6 +121,17 @@
             // Handle any errors that occur during the request
           });
       }
+        // Function to detect the Enter key press and trigger the search
+        function handleKeyPress(event) {
+          if (event.key === 'Enter') {
+            searchnav();
+            event.preventDefault(); // Prevent form submission (optional)
+          }
+        }
+
+        // Add an event listener to the search input field
+        const searchInput = document.getElementById('searchbar-txt');
+        searchInput.addEventListener('keydown', handleKeyPress);
     </script>
     </main>
   </body>
