@@ -74,6 +74,7 @@
             console.log(result);
             // You can display the result on the page or perform further actions
             document.getElementById("searchResults").style.display = "block";
+            document.getElementById("siteAdded").style.display = "none";
             // Display the length of search results
             const resultsLength = result.length;
             document.getElementById('results-length').textContent = `Number of Results: ${resultsLength}`;
