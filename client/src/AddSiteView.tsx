@@ -2,7 +2,7 @@ import {useState} from "react";
 import LoadingIndicator from "./components/LoadingIndicator";
 import {useNavigate} from "react-router-dom";
 
-const API_URL = "";
+const API_URL = "https://sanjaykumaran.com/";
 
 export default function AddSiteView() {
     const navigate = useNavigate();

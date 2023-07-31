@@ -1,6 +1,6 @@
 import {useState} from "react";
 import logo from './assets/astronaut-miner.png'
-const API_URL = "";
+const API_URL = "https://sanjaykumaran.com/";
 export default function App() {
     const [searchType, setSearchType] = useState("OR");
     const [resultsLength, setResultsLength] = useState(15);
